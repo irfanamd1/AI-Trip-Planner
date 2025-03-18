@@ -222,7 +222,7 @@ const CreateTrip = () => {
         <div className='grid grid-cols-3 gap-5 mt-5'>
           {
             SelectTravelesList.map((item, index) => (
-              <div key={ index }  onClick={ () => handleInputChange('traveler', item.people )} className={`p-4 border rounded-lg hover:shadow-lg cursor-pointer ${formData?.traveler == item.people && 'shadow-lg border-black'}`}> 
+              <div key={ index }  onClick={ () => handleInputChange('traveler', item.people )} className={`p-4 border rounded-lg hover:shadow-lg cursor-pointer ${formData?.traveler == item.people && 'shadow-lg border-gray-500'}`}> 
                 <h2 className='text-4xl'>{ item.icon }</h2>
                 <h2 className='font-bold text-lg'>{ item.title }</h2>
                 <h2 className='text-sm text-gray-500'>{ item.desc }</h2>
