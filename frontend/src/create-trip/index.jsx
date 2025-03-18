@@ -74,7 +74,7 @@ const CreateTrip = () => {
     } 
   
       setLoading(true);
-      toastId = toast.loading("Generating...");
+      toastId = toast.loading("Generating your trip... Please Wait");
   
     const FINAL_PROMPT = AI_PROMPT
     .replace('{location}', formData?.location?.label)
@@ -94,7 +94,7 @@ const CreateTrip = () => {
     } catch (error) {
       setLoading(false);
       toast.dismiss(toastId);
-      toast.error("Failed to Generate");
+      toast.error("Failed to Generate, Try Again");
     }
   };
   
@@ -119,7 +119,7 @@ const CreateTrip = () => {
     navigate('/view-trip/' + docId)
     } catch (error) {
       setLoading(false);
-      toast.error("Failed to Save");
+      toast.error("Failed to Save, Try Again");
     }
   };
   
