@@ -44,8 +44,8 @@ const MyTrips = () => {
             //     </div>
             // ))
             :
-            <div className='absolute top-[50%] left-[50%] translate(-50%, -50%)'>
-                <p>No Trips Found</p>
+            <div className='absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]'>
+              <p>No Trips Found</p>
             </div>
         }
       </div>
