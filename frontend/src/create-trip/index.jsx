@@ -20,9 +20,12 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { useNavigate } from 'react-router-dom';
+import { useTheme } from '@/useTheme';
 
 const CreateTrip = () => {
 
+  const theme = useTheme();
+  
   const [place, setPlace] = useState();
 
   const [formData, setFormData] = useState([]);
@@ -123,8 +126,6 @@ const CreateTrip = () => {
     }
   };
   
-  
-
   const getUserProfile = (tokenInfo) => {
     axios.get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${ tokenInfo?.access_token }`, {
       headers: {
@@ -137,6 +138,8 @@ const CreateTrip = () => {
       onGenerateTrip();
     })
   }
+
+  const logoSrc = theme === "dark" ? "/darklogo.png" : "/lightlogo.png";
 
   return (
     <div className='sm:px-10 md:px-32 lg:px-56 xl:px-72 px-5 mt-10'>
@@ -247,13 +250,12 @@ const CreateTrip = () => {
               ✕
             </button>
             <DialogDescription>
-              <img src='/logo.svg' alt="logo" />
+              <img className='h-6 w-20' src={ logoSrc } alt="logo" />
               <h2 className='font-bold text-lg mt-7'>Sign In with Google</h2>
               <p>Sign In to the app with Google Authentication securely</p>
               <Button 
                 onClick={ login }
-                variant='outline' 
-                className='w-full text-black border-black mt-5 cursor-pointer hover:bg-black hover:text-white flex gap-4 items-center'
+                className='w-full mt-5 cursor-pointer flex gap-4 items-center'
               >
                 <FcGoogle className='h-7 w-7' />
                 Sign In with Google
