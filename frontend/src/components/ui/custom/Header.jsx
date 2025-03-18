@@ -95,7 +95,6 @@ const Header = () => {
                 </div> 
                 <div className='md:hidden'>
                   <div className='flex gap-5 items-center'>
-                    <ModeToggle />
                     <Drawer>
                       <DrawerTrigger>
                         <RxHamburgerMenu onClick={ () => setOpenDrawer(true) } />
