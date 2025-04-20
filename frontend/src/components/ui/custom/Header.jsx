@@ -85,7 +85,7 @@ const Header = () => {
                       <PopoverContent>
                           <h2 className='cursor-pointer' onClick={ () => {
                             googleLogout();
-                            localStorage.clear();
+                            localStorage.setItem('user', null);
                             window.location.href = '/';
                           }}>
                             Logout
@@ -115,7 +115,7 @@ const Header = () => {
                               <PopoverContent>
                                   <h2 onClick={ () => {
                                     googleLogout();
-                                    localStorage.clear();
+                                    localStorage.setItem('user', null);
                                     window.location.href = '/';
                                   }}>
                                     Logout

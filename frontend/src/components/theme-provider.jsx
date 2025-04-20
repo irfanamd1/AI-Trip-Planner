@@ -18,13 +18,14 @@ export function ThemeProvider({ children, defaultTheme = "system", storageKey = 
       return;
     }
 
+    localStorage.setItem(storageKey, theme);
+
     root.classList.add(theme);
   }, [theme]);
 
   const value = {
     theme,
     setTheme: (theme) => {
-      localStorage.setItem(storageKey, theme);
       setTheme(theme);
     },
   };
